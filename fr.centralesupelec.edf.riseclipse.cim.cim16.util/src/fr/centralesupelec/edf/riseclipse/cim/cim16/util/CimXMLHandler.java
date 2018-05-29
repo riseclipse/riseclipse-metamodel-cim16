@@ -26,12 +26,13 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 
-public abstract class CimXMLHandler extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimXMLHandler {
+public class CimXMLHandler extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimXMLHandler {
 
     public CimXMLHandler( XMLResource xmiResource, XMLHelper helper, Map< ?, ? > options ) {
         super( CimConstants.cimURI, xmiResource, helper, options );
     }
 
+    // This method needs the specific URI
     @Override
     protected boolean setEnumValue( EObject object, EStructuralFeature feature, String resource ) {
         if( resource.startsWith( CimConstants.cimURISharp ) ) {
