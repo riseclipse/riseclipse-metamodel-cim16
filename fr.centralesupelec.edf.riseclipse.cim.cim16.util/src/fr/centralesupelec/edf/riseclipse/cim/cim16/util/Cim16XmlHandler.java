@@ -26,23 +26,25 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 
-public class CimXMLHandler extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimXMLHandler {
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimXmlHandler;
 
-    public CimXMLHandler( XMLResource xmiResource, XMLHelper helper, Map< ?, ? > options ) {
-        super( CimConstants.cimURI, xmiResource, helper, options );
+public class Cim16XmlHandler extends AbstractCimXmlHandler {
+
+    public Cim16XmlHandler( XMLResource xmiResource, XMLHelper helper, Map< ?, ? > options ) {
+        super( Cim16Constants.cimURI, xmiResource, helper, options );
     }
 
     // This method needs the specific URI
     @Override
     protected boolean setEnumValue( EObject object, EStructuralFeature feature, String resource ) {
-        if( resource.startsWith( CimConstants.cimURISharp ) ) {
+        if( resource.startsWith( Cim16Constants.cimURISharp ) ) {
             int enumNameLength = feature.getEType().getName().length();
             // do not call fr.centralesupelec.riseclipse.cim.util.cimxml.CimXMLHandler.setFeatureValue to avoid infinite recursion
             // call instead org.eclipse.emf.ecore.xmi.impl.SAXXMLHandler.setFeatureValue
             // We use the fact that SAXXMLHandler.setFeatureValue( EObject, EStructuralFeature, Object ) call
             // SAXXMLHandler.setFeatureValue( EObject, EStructuralFeature, Object, -1 )
             super.setFeatureValue( object, feature,
-                  resource.substring( CimConstants.cimURISharp.length() + enumNameLength + 1 ), -1 );
+                  resource.substring( Cim16Constants.cimURISharp.length() + enumNameLength + 1 ), -1 );
             return true;
         }
         return false;

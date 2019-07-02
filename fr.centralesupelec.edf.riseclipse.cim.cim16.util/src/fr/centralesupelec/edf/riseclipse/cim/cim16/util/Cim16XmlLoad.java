@@ -19,12 +19,20 @@
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim16.util;
 
+import org.eclipse.emf.ecore.xmi.XMLHelper;
+import org.xml.sax.helpers.DefaultHandler;
 
-public class CimConstants extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimConstants {
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimXmlLoad;
 
-    // CimPackage is specific to each concrete Cim16 metamodel, so we cannot get it here,
-    // but we prefer to have a generic Cim16 package
-    //public static final String cimURI = CimPackage.eNS_URI;
-    public static final String cimURI = "http://iec.ch/TC57/2013/CIM-schema-cim16";
-    public static final String cimURISharp = cimURI + "#";
+public class Cim16XmlLoad extends AbstractCimXmlLoad {
+
+    public Cim16XmlLoad( XMLHelper helper ) {
+        super( helper );
+    }
+
+    @Override
+    protected DefaultHandler makeDefaultHandler() {
+        return new Cim16XmlHandler( resource, helper, options );
+    }
+
 }
