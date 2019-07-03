@@ -19,17 +19,13 @@
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim16.util;
 
-/**
- * <!-- begin-user-doc -->
- * The <b>Resource Factory</b> associated with the package.
- * <!-- end-user-doc -->
- * @generated NOT
- */
-public abstract class CimResourceFactoryImpl extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimResourceFactoryImpl {
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimResourceFactory;
+
+public abstract class AbstractCim16ResourceFactory extends AbstractCimResourceFactory {
 
     @Override
-    protected CimResourceHandler createCimResourceHandler() {
-        return new CimResourceHandler();
+    protected Cim16ResourceHandler createCimResourceHandler() {
+        return new Cim16ResourceHandler();
     }
 
-} //CimResourceFactoryImpl
+}

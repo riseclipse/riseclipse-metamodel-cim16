@@ -19,22 +19,19 @@
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim16.util;
 
-import java.util.Map;
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimXmlHelper;
 
-import org.eclipse.emf.ecore.xmi.XMLHelper;
+public class Cim16XmlHelper extends AbstractCimXmlHelper {
 
-public class CimXMLSaveImpl extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimXMLSaveImpl {
-    
-    public CimXMLSaveImpl( XMLHelper helper ) {
-        super( CimConstants.cimURI, helper );
+    public Cim16XmlHelper( AbstractCim16Resource abstractCim16Resource ) {
+        super( abstractCim16Resource );
     }
 
-    public CimXMLSaveImpl( Map< ?, ? > options, XMLHelper helper, String encoding ) {
-        super( CimConstants.cimURI, options, helper, encoding );
+    @Override
+    public String getURI( String prefix ) {
+        String uri = super.getURI( prefix );
+        if( Cim16Constants.cimURISharp.equals( uri )) return Cim16Constants.cimURI;
+        return uri;
     }
 
-    public CimXMLSaveImpl( Map< ?, ? > options, XMLHelper helper, String encoding, String xmlVersion ) {
-        super( CimConstants.cimURI, options, helper, encoding, xmlVersion );
-    }
-    
 }

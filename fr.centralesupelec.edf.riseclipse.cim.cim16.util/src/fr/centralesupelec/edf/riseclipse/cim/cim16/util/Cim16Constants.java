@@ -19,18 +19,13 @@
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim16.util;
 
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimConstants;
 
-public class CimXMLHelperImpl extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimXMLHelperImpl {
+public class Cim16Constants extends AbstractCimConstants {
 
-    public CimXMLHelperImpl( CimResourceImpl cimResourceImpl ) {
-        super( cimResourceImpl );
-    }
-
-    @Override
-    public String getURI( String prefix ) {
-        String uri = super.getURI( prefix );
-        if( CimConstants.cimURISharp.equals( uri )) return CimConstants.cimURI;
-        return uri;
-    }
-
+    // CimPackage is specific to each concrete Cim16 metamodel, so we cannot get it here,
+    // but we prefer to have a generic Cim16 package
+    //public static final String cimURI = CimPackage.eNS_URI;
+    public static final String cimURI = "http://iec.ch/TC57/2013/CIM-schema-cim16";
+    public static final String cimURISharp = cimURI + "#";
 }

@@ -19,18 +19,24 @@
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim16.util;
 
-import java.io.OutputStream;
 import java.util.Map;
 
-import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.XMLHelper;
 
-public class CimResourceHandler extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimResourceHandler {
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimXmlSave;
+
+public class Cim16XmlSave extends AbstractCimXmlSave {
     
-    static final String xmlDeclaration = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n";
-
-    @Override
-    public void preSave( XMLResource resource, OutputStream outputStream, Map< ?, ? > options ) {
-        super.preSave( resource, outputStream, options, CimConstants.cimURI );
+    public Cim16XmlSave( XMLHelper helper ) {
+        super( Cim16Constants.cimURI, helper );
     }
 
+    public Cim16XmlSave( Map< ?, ? > options, XMLHelper helper, String encoding ) {
+        super( Cim16Constants.cimURI, options, helper, encoding );
+    }
+
+    public Cim16XmlSave( Map< ?, ? > options, XMLHelper helper, String encoding, String xmlVersion ) {
+        super( Cim16Constants.cimURI, options, helper, encoding, xmlVersion );
+    }
+    
 }
