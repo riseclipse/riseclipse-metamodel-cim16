@@ -9,7 +9,7 @@
 
   <parent>
     <groupId>fr.centralesupelec.edf.riseclipse</groupId>
-    <artifactId>RiseClipseMetamodel_Cim16</artifactId>
+    <artifactId>riseclipse-metamodel-cim16</artifactId>
     <version>1.0.1-SNAPSHOT</version>
   </parent>
 
