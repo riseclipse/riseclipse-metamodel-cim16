@@ -40,8 +40,8 @@
   </parent>
 
   <scm>
-    <connection>scm:git:git@gitlab-research.centralesupelec.fr:RiseClipseGroup/riseclipse-metamodel-cim16.git</connection>
-    <developerConnection>scm:git:git@gitlab-research.centralesupelec.fr:RiseClipseGroup/riseclipse-metamodel-cim16.git</developerConnection>
+    <connection>scm:git:git@github.com:riseclipse/riseclipse-metamodel-cim16.git</connection>
+    <developerConnection>scm:git:git@github.com:riseclipse/riseclipse-metamodel-cim16.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
  
