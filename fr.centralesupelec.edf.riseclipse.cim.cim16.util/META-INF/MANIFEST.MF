@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: fr.centralesupelec.edf.riseclipse.cim.cim16.util;singleton:=true
-Bundle-Version: 1.0.1.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Version: 1.1.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
@@ -13,3 +13,4 @@ Require-Bundle: org.eclipse.core.runtime,
  fr.centralesupelec.edf.riseclipse.cim.util
 Bundle-ActivationPolicy: lazy
 Export-Package: fr.centralesupelec.edf.riseclipse.cim.cim16.util
+Automatic-Module-Name: fr.centralesupelec.edf.riseclipse.cim.cim16.util
